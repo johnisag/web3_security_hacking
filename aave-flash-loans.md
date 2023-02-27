@@ -277,3 +277,66 @@ module.exports = {
 
 ```
 
+If you look at this file, we have three variables - `DAI`, `DAI_WHALE` and `POOL_ADDRESS_PROVIDER`.&#x20;
+
+`DAI` is the address of the `DAI` contract on polygon mainnet.&#x20;
+
+`DAI_WHALE` is an address on polygon mainnet with lots of DAI and&#x20;
+
+`POOL_ADDRESS_PROVIDER` is the address of the `PoolAddressesProvider` on polygon mainnet that our contract is expecting in the constructor.&#x20;
+
+The address can be found [here](https://docs.aave.com/developers/deployed-contracts/v3-mainnet/polygon).
+
+<mark style="color:orange;">Since we are not actually executing any arbitrage, and therefore will not be able to pay the premium if we run the contract as-is, we use another Hardhat feature called</mark> <mark style="color:orange;"></mark><mark style="color:orange;">**impersonation**</mark> <mark style="color:orange;"></mark><mark style="color:orange;">that lets us send transactions on behalf of</mark> <mark style="color:orange;"></mark>_<mark style="color:orange;">any</mark>_ <mark style="color:orange;"></mark><mark style="color:orange;">address, even without their private key.</mark>&#x20;
+
+However, of course, this only works on the local development network and not on real networks. Using impersonation, we will steal some DAI from the `DAI_WHALE` so we have enough DAI to pay back the loan with premium.
+
+Inside your **`flash-loans/test`** folder create a new file **`FlashLoanExample.js`**
+
+```javascript
+const { expect, assert } = require("chai");
+const hre = require("hardhat");
+
+const { DAI, DAI_WHALE, POOL_ADDRESS_PROVIDER } = require("../config");
+
+describe("Flash Loans", function () {
+  it("Should take a flash loan and be able to return it", async function () {
+    const FlashLoanExample = await hre.ethers.getContractFactory(
+      "FlashLoanExample"
+    );
+
+    // Deploy our FlashLoanExample smart contract
+    const flashLoanExample = await FlashLoanExample.deploy(
+      // Address of the PoolAddressProvider: you can find it here: https://docs.aave.com/developers/deployed-contracts/v3-mainnet/polygon
+      POOL_ADDRESS_PROVIDER
+    );
+    await flashLoanExample.deployed();
+
+    // Fetch the DAI smart contract
+    const token = await ethers.getContractAt("IERC20", DAI);
+
+    // Move 2000 DAI from DAI_WHALE to our contract by impersonating them
+    const BALANCE_AMOUNT_DAI = ethers.utils.parseEther("2000");
+    await hre.network.provider.request({
+      method: "hardhat_impersonateAccount",
+      params: [DAI_WHALE],
+    });
+    const signer = await ethers.getSigner(DAI_WHALE);
+    await token
+      .connect(signer)
+      .transfer(flashLoanExample.address, BALANCE_AMOUNT_DAI); // Sends our contract 2000 DAI from the DAI_WHALE
+
+    // Request and execute a flash loan of 10,000 DAI from Aave
+    const txn = await flashLoanExample.createFlashLoan(DAI, 10000);
+    await txn.wait();
+
+    // By this point, we should have executed the flash loan and paid back (10,000 + premium) DAI to Aave
+    // Let's check our contract's remaining DAI balance to see how much it has left
+    const remainingBalance = await token.balanceOf(flashLoanExample.address);
+
+    // Our remaining balance should be <2000 DAI we originally had, because we had to pay the premium
+    expect(remainingBalance.lt(BALANCE_AMOUNT_DAI)).to.equal(true);
+  });
+});
+```
+
