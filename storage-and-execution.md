@@ -86,7 +86,7 @@ For runtime calculations, i.e. local variables and such, the EVM has access to t
 
 The EVM also has access to the persistent world state i.e. account state to read and write to e.g. changing state variables within a contract.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 The stack is a simple stack that supports PUSH/POP operations, and each stack element is 256 bits (32 bytes) and has a max depth of 1024 elements.
 

@@ -109,7 +109,7 @@ Again, it is important to remember that only one given combination of nodes can 
 
 For our given example, we only need to provide the following nodes to be able to prove that H\[K] actually exists in our nodes:
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 At this point, if the computed value of `H(ABCDEFGHIJKLMNOP)` matches the previously known value `r` that the Verifier had, it must be true that `K` existed in the Merkle Tree, or else the hashes wouldn't be the same.
 
