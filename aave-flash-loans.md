@@ -340,3 +340,43 @@ describe("Flash Loans", function () {
 });
 ```
 
+Now let's try to understand whats happening in these lines of code.
+
+First, using Hardhat's extended **`ethers` ** version
+
+We call the function **`getContractAt` ** to get the instance of **DAI** deployed on Polygon Mainnet. Remember Hardhat will simulate Polygon Mainnet, so when you get the contract at the address of **`DAI` ** which you had specified in the **`config.js`**, Hardhat will actually create an instance of the DAI contract which matches that of Polygon Mainnet.
+
+After that, the lines given below will again try to impersonate/simulate the account on Polygon Mainnet with the address from `DAI_WHALE`. Now the fascinating point is that even though Hardhat doesn't have the private key of `DAI_WHALE` in the local testing environment, it will act as if we already know its private key and can sign transactions on the behalf of `DAI_WHALE`. It will also have the amount of DAI it has on the polygon mainnet.
+
+```javascript
+    await hre.network.provider.request({
+      method: "hardhat_impersonateAccount",
+      params: [DAI_WHALE],
+    });
+```
+
+Now we create a signer for `DAI_WHALE` so that we can call the simlulated DAI contract with the address of `DAI_WHALE` and transfer some `DAI` to `FlashLoanExample Contract`. We need to do this so we can pay off the loan with premium, as we will otherwise not be able to pay the premium. In real world applications, the premium would be paid off the profits made from arbitrage or attacking a smart contract.
+
+```javascript
+    const signer = await ethers.getSigner(DAI_WHALE);
+    await token
+      .connect(signer)
+      .transfer(flashLoanExample.address, BALANCE_AMOUNT_DAI); 
+```
+
+After this we start a flash loan and checking that the remaining balance of `FlashLoanExampleContract` is less than the amount it initially started with, the amount will be less because the contract had to pay a premium on the loaned amount.
+
+```javascript
+    const txn = await flashLoanExample.createFlashLoan(DAI, 10000);
+    await txn.wait();
+    const remainingBalance = await token.balanceOf(flashLoanExample.address);
+    expect(remainingBalance.lt(BALANCE_AMOUNT_DAI)).to.equal(true);
+```
+
+To run the test you can simply execute on your terminal:
+
+```
+npx hardhat test
+```
+
+If all your tests pass, then that means you successfully were able to borrow a loan of 10,000 DAI from Aave with no required collateral, and then paid back the 10k DAI + a premium.
