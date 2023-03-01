@@ -51,7 +51,7 @@ There are 4 basic steps to any flash loan. To execute a flash loan, you first ne
 * `executeOperation` is all custom code you must have written - you go wild with the money here. At the end, you approve the Flash Loan provider to withdraw back the borrowed assets, along with a premium
 * The Flash Loan provider takes back the assets it gave you, along with the premium.
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you look at this diagram, you can see how a flash loan helped the user make a profit in an arbitrage trade.&#x20;
 
