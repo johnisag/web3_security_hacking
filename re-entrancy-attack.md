@@ -128,7 +128,7 @@ This will create a loop where `GoodContract` will keep sending money to `BadCont
 
 We will utilize Hardhat Tests to demonstrate that this attack actually works, to ensure that `BadContract` is actually draining all the funds from `GoodContract`. You can read the [Hardhat Docs for Testing](https://hardhat.org/tutorial/testing-contracts.html) to get familiar with the testing environment.
 
-Create a new file inside the **`re-entrancy/test`**directory and call it **`attack.sol`**
+Create a new file inside the **`re-entrancy/test`**directory and call it **`attack.js`**
 
 ```javascript
 const { expect } = require("chai");
