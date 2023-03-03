@@ -12,7 +12,7 @@ Let's recap a few things we taught in earlier tracks before moving ahead.
 
 Recall that Ethereum works as a transaction-based state machine. Starting at some state `s1`, a transaction manipulates certain data to shift the world state to some state `s2`.
 
-<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 To group things together, transactions are packed together in blocks. Generally speaking, each block changes the world state from state `s1` to `s2`, and the conversion is calculated based on the state changes made by every transaction within the block.
 
@@ -112,7 +112,7 @@ The EVM memory is a linearly addressed memory, that can be addressed at the byte
 
 Initially, all memory locations have the value of zero. During transaction execution however, the values can be updated and modified.
 
-<figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 🔒 Account Storage
 

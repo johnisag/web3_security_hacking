@@ -6,7 +6,7 @@ description: >-
 
 # delegatecall attacks
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 `.delegatecall()` is a method in Solidity used to call a function in a target contract from an original contract. However, unlike other methods, when the function is executed in the target contract using `.delegatecall()`, the context is passed from the original contract i.e. the code executes in the target contract, but variables get modified in the original contract.
 
@@ -66,7 +66,7 @@ All this when concatenated is passed into the `delegatecall` method which is cal
 
 The actual addition part is not that interesting, what's interesting is that the `Calculator` contract actually sets some state variables. But remember when the values are getting assigned in `Calculator` contract, they are actually getting assigned to the storage of the `Student` contract because deletgatecall uses the storage of the original contract when executing the function in the target contract. So what exactly will happen is as follows:
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 You know from the previous lessons that each variable slot in solidity is of 32 bytes which is 256 bits.&#x20;
 
