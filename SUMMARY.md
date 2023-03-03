@@ -8,3 +8,4 @@
 * [Private Data](private-data.md)
 * [delegatecall attacks](delegatecall-attacks.md)
 * [Never on-chain randomness](never-on-chain-randomness.md)
+* [DOS in a Contract](dos-in-a-contract.md)

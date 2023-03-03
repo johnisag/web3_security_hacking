@@ -12,13 +12,13 @@ Let's recap a few things we taught in earlier tracks before moving ahead.
 
 Recall that Ethereum works as a transaction-based state machine. Starting at some state `s1`, a transaction manipulates certain data to shift the world state to some state `s2`.
 
-<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 To group things together, transactions are packed together in blocks. Generally speaking, each block changes the world state from state `s1` to `s2`, and the conversion is calculated based on the state changes made by every transaction within the block.
 
 When we think of these state changes, Ethereum can be thought of as a state chain.
 
-<figure><img src=".gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 But, what is this world state? 🤨
 
@@ -78,7 +78,7 @@ Just like how Java ships with the JVM, and Javascript and Python also have their
 
 The EVM has a stack-based architecture. A massive simplification of modern CPU architectures.
 
-<figure><img src=".gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 The smart contract code, or EVM code, lives in an immutable storage location within the EVM.
 
@@ -100,7 +100,7 @@ The account storage is part of the world state, and is the persistent storage wh
 
 Stack is a Last-in First-out data structure used to hold temporary values. Think of it like a stack of plates. The plate you stack on the top, will be the first one that gets removed. Stacks are used for fast operations on fixed size data across computer science, and EVM is no different.
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (2).png" alt=""><figcaption></figcaption></figure>
 
 All operations from the EVM are run on the stack. The EVM stack supports doing operations with the top 16 elements of the stack, and no deeper. The other 1008 stack elements can be used to store operational data such as OPCODES to run and such.
 
@@ -118,7 +118,7 @@ Initially, all memory locations have the value of zero. During transaction execu
 
 The persistent account storage is a mapping from 256-bit keys to 256-bit values. All locations in persistent storage are also initially defined as zero (thereby the property of integers in Solidity having initial value of 0, booleans being false, strings being empty, etc.)
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 The keys within these mappings are often referred to as slots. Each state variable in a smart contract is assigned a slot within the account storage, in the order they were defined.
 
