@@ -6,3 +6,4 @@
 * [Aave Flash Loans](aave-flash-loans.md)
 * [Re-entrancy Attack](re-entrancy-attack.md)
 * [Private Data](private-data.md)
+* [delegatecall attacks](delegatecall-attacks.md)

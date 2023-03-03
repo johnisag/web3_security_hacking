@@ -78,7 +78,7 @@ Just like how Java ships with the JVM, and Javascript and Python also have their
 
 The EVM has a stack-based architecture. A massive simplification of modern CPU architectures.
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5) (2).png" alt=""><figcaption></figcaption></figure>
 
 The smart contract code, or EVM code, lives in an immutable storage location within the EVM.
 
@@ -112,7 +112,7 @@ The EVM memory is a linearly addressed memory, that can be addressed at the byte
 
 Initially, all memory locations have the value of zero. During transaction execution however, the values can be updated and modified.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 🔒 Account Storage
 
