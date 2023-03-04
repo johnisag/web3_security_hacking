@@ -39,7 +39,7 @@ _To upgrade the **`Implementation Contract`** you will have to use some method l
 * **keep it in the `Proxy Contract`** which is essentially how **`Transparent Proxy Pattern`** works,or&#x20;
 * or **keep it in the `Implementation Contract`** which is how the **UUPS contract** works.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 **Another important thing to note about this `Proxy Pattern` is that the constructor of the `Implementation Contract` is never executed.**
 

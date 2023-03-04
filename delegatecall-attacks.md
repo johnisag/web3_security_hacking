@@ -6,7 +6,7 @@ description: >-
 
 # delegatecall attacks
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 `.delegatecall()` is a method in Solidity used to call a function in a target contract from an original contract. However, unlike other methods, when the function is executed in the target contract using `.delegatecall()`, the context is passed from the original contract i.e. the code executes in the target contract, but variables get modified in the original contract.
 

@@ -35,7 +35,7 @@ Let's say we have 4 transactions: "Transaction A", B, C, and D. All of them are 
 
 The following would be the resulting Merkle Tree of these transactions:
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Verifying Validity using the Merkle Root
 

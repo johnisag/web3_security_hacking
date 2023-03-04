@@ -13,3 +13,4 @@
 * [Malicious legit-looking contracts](malicious-legit-looking-contracts.md)
 * [Upgradable Smart Contracts](upgradable-smart-contracts.md)
 * [Gas Optimizations](gas-optimizations.md)
+* [Meta transactions](meta-transactions.md)
