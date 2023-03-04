@@ -20,7 +20,7 @@ Essentially how this pattern works is that a contract is split into two contract
 
 User calls the `Proxy Contract` which further does a `delegatecall` to the `Implementation Contract` so that it can implement the logic.&#x20;
 
-<figure><img src=".gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:purple;">This pattern becomes interesting when</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`Implementation Contract`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">can be replaced which means the logic which is executed can be replaced by another version of the</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`Implementation Contract`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">without affecting the state of the contract which is stored in the proxy.</mark>
 
@@ -39,7 +39,7 @@ _To upgrade the **`Implementation Contract`** you will have to use some method l
 * **keep it in the `Proxy Contract`** which is essentially how **`Transparent Proxy Pattern`** works,or&#x20;
 * or **keep it in the `Implementation Contract`** which is how the **UUPS contract** works.
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 **Another important thing to note about this `Proxy Pattern` is that the constructor of the `Implementation Contract` is never executed.**
 

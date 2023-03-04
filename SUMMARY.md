@@ -12,5 +12,4 @@
 * [tx.origin](tx.origin.md)
 * [Malicious legit-looking contracts](malicious-legit-looking-contracts.md)
 * [Upgradable Smart Contracts](upgradable-smart-contracts.md)
-* [Page 1](page-1.md)
 * [Gas Optimizations](gas-optimizations.md)
