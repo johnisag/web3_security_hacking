@@ -34,7 +34,7 @@ Each block essentially manipulates multiple account states, thereby manipulating
 
 Alright, so the world state is comprised of various account states. What is an account state?
 
-<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 The account state contains a few common things, like the nonce and the balance (in ETH). Additionally, smart contracts also contain a storage hash and a code hash. The two hashes act as references to a separate state tree, which store state variables and the bytecode of the smart contract respectively.
 
@@ -112,7 +112,7 @@ The EVM memory is a linearly addressed memory, that can be addressed at the byte
 
 Initially, all memory locations have the value of zero. During transaction execution however, the values can be updated and modified.
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (2).png" alt=""><figcaption></figcaption></figure>
 
 ### 🔒 Account Storage
 

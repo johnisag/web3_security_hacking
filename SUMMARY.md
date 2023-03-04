@@ -11,3 +11,4 @@
 * [DOS in a Contract](dos-in-a-contract.md)
 * [tx.origin](tx.origin.md)
 * [Malicious legit-looking contracts](malicious-legit-looking-contracts.md)
+* [Upgradable Smart Contracts](upgradable-smart-contracts.md)
