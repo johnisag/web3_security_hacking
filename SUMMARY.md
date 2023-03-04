@@ -10,3 +10,4 @@
 * [Never on-chain randomness](never-on-chain-randomness.md)
 * [DOS in a Contract](dos-in-a-contract.md)
 * [tx.origin](tx.origin.md)
+* [Malicious legit-looking contracts](malicious-legit-looking-contracts.md)
