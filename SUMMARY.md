@@ -14,3 +14,4 @@
 * [Upgradable Smart Contracts](upgradable-smart-contracts.md)
 * [Gas Optimizations](gas-optimizations.md)
 * [Meta transactions](meta-transactions.md)
+* [Maximal Extractable Value](maximal-extractable-value.md)

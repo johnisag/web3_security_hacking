@@ -20,7 +20,7 @@ Essentially how this pattern works is that a contract is split into two contract
 
 User calls the `Proxy Contract` which further does a `delegatecall` to the `Implementation Contract` so that it can implement the logic.&#x20;
 
-<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:purple;">This pattern becomes interesting when</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`Implementation Contract`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">can be replaced which means the logic which is executed can be replaced by another version of the</mark> <mark style="color:purple;"></mark><mark style="color:purple;">`Implementation Contract`</mark> <mark style="color:purple;"></mark><mark style="color:purple;">without affecting the state of the contract which is stored in the proxy.</mark>
 

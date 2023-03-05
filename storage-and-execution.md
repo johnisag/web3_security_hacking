@@ -156,7 +156,7 @@ But, there is one special thing here. The EVM also stores a counter for how much
 
 ### ⛽ Gas during Execution
 
-<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4) (3).png" alt=""><figcaption></figcaption></figure>
 
 Highlighting the above points, you can see that the EOA passes a certain amount of gas to the contract account when it sends a message. The EVM code runs and uses up some of the gas. If any gas is left over, it is refunded back to the EOA.
 

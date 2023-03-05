@@ -93,7 +93,7 @@ Let's say the `Verifier` only has the `Merkle Root` `r`, that is, the top-level 
 
 To do this, you can generate a `Merkle Proof`. Let's try to understand what a `Merkle Proof` is with an example Merkle Tree.
 
-<figure><img src=".gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The main idea is as follows: if you can give the `Verifier` the value of `K`, along with all the relevant nodes from the tree that get hashed up together to build up the `r` hash, the `Verifier` can compare the computed root value against `r` that they already have. If they are the same hash, it must mean that `K` was in fact present in the Merkle Tree, as you could not have generated the same Merkle Root hash with different input data.
 

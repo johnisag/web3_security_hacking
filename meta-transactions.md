@@ -26,7 +26,7 @@ At this level, we will do two things - learn about meta transactions and how to 
 
 In the previous IPFS levels, we have explained what hashing is. Before moving on, we need to understand a second fundamental concept of cryptography - digital signatures.
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 <mark style="color:purple;">**A digital signature is a mathematical way to verify the authenticity of a message.**</mark>** Given some data, a private key can be used to sign that data and produce a signed message.**
 
