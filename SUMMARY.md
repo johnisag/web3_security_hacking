@@ -15,3 +15,4 @@
 * [Gas Optimizations](gas-optimizations.md)
 * [Meta transactions](meta-transactions.md)
 * [Maximal Extractable Value](maximal-extractable-value.md)
+* [An EVM Searcher](an-evm-searcher.md)
