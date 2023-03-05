@@ -242,7 +242,8 @@ provider.on("block", async (blockNumber) => {
             // In the data field, we pass the function selctor of the mint function
             data: FakeNFT.interface.getSighash("mint()"),
             // Max Gas Fees you are willing to pay
-            maxFeePerGas: BigNumber.from(10).pow(9).mul(3),
+            // we need to increase this, 05/3/23 * 10
+            maxFeePerGas: BigNumber.from(10).pow(9).mul(3).mul(10),
             // Max Priority gas fees you are willing to pay
             maxPriorityFeePerGas: BigNumber.from(10).pow(9).mul(2),
           },
